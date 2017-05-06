@@ -3,7 +3,15 @@ NC='\033[0m' # No Color
 perform_update=false
 
 clear
-printf "Welcome! This script will set up basic terminal configurations.\n"
+printf "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n"
+printf "┃  Welcome! This script will set up basic terminal configurations.  ┃\n"
+printf "┃                                                                   ┃\n"
+printf "┃  Author:     mabuu          created at:     06.05.2017            ┃\n"
+printf "┃                             changed at:     06.05.2017            ┃\n"
+printf "┃                                                                   ┃\n"
+printf "┃  Git-Repo:   https://github.com/mabuu/scripts.git                 ┃\n"
+printf "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
+
 read -p "Do you want to perform package updates before continueing? [yn] " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]] ; then
   perform_update=true    
