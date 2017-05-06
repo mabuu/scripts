@@ -1,9 +1,23 @@
 RED='\033[0;31m'
 NC='\033[0m' # No Color
+perform_update=false
 
-printf "\n${RED}Installing packages...${NC}\n"
+clear
+printf "Welcome! This script will set up basic terminal configurations.\n"
+read -p "Do you want to perform package updates before continueing? [yn] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]] ; then
+  perform_update=true    
+fi
+
+
+if [ "$perform_update" = true ] ; then
+printf "\n${RED}Updating installed packages...${NC}\n"
 yum update -y
+fi
+
+printf "\n${RED}Installing packages [tmux, vim, zsh]...${NC}\n"
 yum install tmux vim zsh -y
+
 
 printf "\n${RED}Downloading config files...${NC}\n"
 rm -rf ~/.config
