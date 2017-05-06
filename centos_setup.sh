@@ -18,6 +18,9 @@ fi
 printf "\n${RED}Installing packages [tmux, vim, zsh]...${NC}\n"
 yum install tmux vim zsh -y
 
+#printf "\n${RED}Installing and configuring oh-my-zsh...${NC}\n"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#making config...
 
 printf "\n${RED}Downloading config files...${NC}\n"
 rm -rf ~/.config
@@ -30,6 +33,7 @@ cd ~
 touch ~/.zshrc_local
 ln -s ~/.config/terminal_configs/.zshrc .zshrc
 ln -s ~/.config/terminal_configs/.tmux.conf .tmux.conf
+ln -s ~/.config/terminal_configs/.vimrc .vimrc
 
 printf "\n${RED}Changing default shell to zsh...${NC}\n"
 chsh --shell /bin/zsh
